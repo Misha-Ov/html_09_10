@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+.section {
+    @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.25);
+
+    @include breakpoint-xs {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.4);
+    }
+    
+    @include breakpoint-sml {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.5);
+    }
+    
+    @include breakpoint-med {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.6);
+    }
+    
+    @include breakpoint-lrg {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.8);
+    }
+
+    @include breakpoint-xl {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base);
+    }
+}
+
+
+.section--about {
+    background-color: $color-secondary;
+    @include pdng-y-scale ($padding-y-lrg, $padding-y-base, 0.25);
+
+    @include breakpoint-xs {
+        @include pdng-y-scale ($padding-y-lrg, $padding-y-base, 0.4);
+    }
+    
+    @include breakpoint-sml {
+        @include pdng-y-scale ($padding-y-lrg, $padding-y-base, 0.5);
+    }
+    
+    @include breakpoint-med {
+        @include pdng-y-scale ($padding-y-lrg, $padding-y-base, 0.6);
+    }
+    
+    @include breakpoint-lrg {
+        @include pdng-y-scale ($padding-y-lrg, $padding-y-base, 0.8);
+    }
+
+    @include breakpoint-xl {
+        @include pdng-y-scale ($padding-y-lrg, $padding-y-base);
+    }
+}
+
+.project {
+    height: 250px;
+    background-color: $color-highlight;
+    @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.30);
+
+    @include breakpoint-sml {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base, 0.60);
+    }
+
+    @include breakpoint-xl {
+        @include pdng-y-scale ($padding-y-base, $padding-y-base);
+    }
+
+    .container-project {
+        @include grid-layout;
+        @include breakpoint-sml;
+
+        @include breakpoint-sml {
+            @include grid-layout (3);
+        }
+
+        @include breakpoint-xl {
+            @include grid-layout (6);
+        }
+    }
+
+    .project__number span {
+        @include text-scale ($font-size-med);
+    }
+
+    .project__image {
+        margin-right: $margin-x-sml;
+        min-width: 45px;
+        min-height: 45px;
+    }
+
+    .project__item {
+        display: flex;
+        margin: 0 auto;
+            span {
+                color: $color-default;
+            }
+    }
+}
+
+.section__part {
+    margin-bottom: calc($margin-y-med * 0.5);
+}

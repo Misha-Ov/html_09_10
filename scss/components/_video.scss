@@ -1,0 +1,14 @@
+
+.section__video {
+    position: relative;
+    padding-bottom: 56%;
+    width: 100%;
+    text-align: left;
+
+    iframe {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        overflow: hidden;
+    }
+}

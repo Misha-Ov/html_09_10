@@ -1,9 +1,10 @@
-@mixin text-scale ($mg-btm: $margin-y-base, $font-size: $font-size-primary, $scale: 1) {
-    margin-bottom: calc($mg-btm * $scale);
+@use 'variables' as *;
+
+@mixin text-scale ($font-size: $font-size-primary, $scale: 1) {
     font-size: calc($font-size * $scale);
 }
 
-@mixin btn-scale ($pdng: $padding-fixed , $font-size: $font-size-primary, $scale: 1) {
+@mixin btn-scale ($pdng: $padding-fixed, $font-size: $font-size-primary, $scale: 1) {
     padding: calc(calc($pdng / 2) * $scale) calc($pdng * $scale);
     font-size: calc($font-size * $scale);
 }
@@ -11,4 +12,10 @@
 @mixin pdng-y-scale ($pdng-top: 0, $pdng-btm: 0, $scale: 1) {
     padding-top: calc($pdng-top * $scale);
     padding-bottom: calc($pdng-btm * $scale);
+}
+
+@mixin grid-layout ($cols: 2) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $margin-y-sml 5%;
 }

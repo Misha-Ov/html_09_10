@@ -1,0 +1,83 @@
+@use '../abstracts' as *;
+@use 'reset';
+
+body {
+    background-color: $color-primary;
+    font-family: $font-family-primary;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: calc($margin-y-base * 0.5);
+    font-weight: $font-weight-bold;
+    text-align: center;
+    @include text-scale ($font-size-lrg, 0.6);
+    
+    @include breakpoint-xs {
+        @include text-scale ($font-size-lrg, 0.7);
+        margin-bottom: calc($margin-y-base * 0.7);
+    }
+
+    @include breakpoint-sml {
+        @include text-scale ($font-size-lrg, 0.8);
+        margin-bottom: calc($margin-y-base * 0.8);
+    }
+
+    @include breakpoint-med {
+        @include text-scale ($font-size-lrg, 0.9);
+        margin-bottom: calc($margin-y-base * 0.9);
+    }
+
+    @include breakpoint-lrg {
+        @include text-scale ($font-size-lrg);
+        margin-bottom: $margin-y-base;
+    }
+}
+
+p, span, a {
+    @include text-scale ($font-size-primary, 0.7);
+    font-weight: $font-weight-base;
+    text-align: center;
+    color: black;
+
+    @include breakpoint-xs {
+        @include text-scale ($font-size-primary, 0.9)
+    }
+
+    @include breakpoint-sml {
+        @include text-scale ($font-size-primary, 1)
+    }
+}
+
+.container {
+
+    margin: 0 calc($margin-x-container * 0.3);
+
+    @include breakpoint-xs {
+        margin: 0 calc($margin-x-container * 0.4);
+    }
+    
+    @include breakpoint-sml {
+        margin: 0 calc($margin-x-container * 0.5);
+    }
+    
+    @include breakpoint-med {
+        margin: 0 calc($margin-x-container * 0.7);
+    }
+    
+    @include breakpoint-lrg {
+        margin: 0 calc($margin-x-container * 0.8);
+    }
+    
+    @include breakpoint-xl {
+        margin: 0 calc($margin-x-container);
+    }
+}
+
+.text-container {
+    max-width: 540px;
+    margin: auto
+}
+
+.hero__text, .section__text {
+    color: $color-additional;
+}

@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.footer {
+    background-color: $color-highlight;
+    @include pdng-y-scale ($padding-y-sml, $padding-y-sml, 0.3);
+
+    @include breakpoint-xs {
+        @include pdng-y-scale ($padding-y-sml, $padding-y-sml, 0.4);
+    }
+
+    @include breakpoint-sml {
+        @include pdng-y-scale ($padding-y-sml, $padding-y-sml, 0.6);
+    }
+
+    @include breakpoint-med {
+        @include pdng-y-scale ($padding-y-sml, $padding-y-sml, 0.8);
+    }
+
+    @include breakpoint-lrg {
+        @include pdng-y-scale ($padding-y-sml, $padding-y-sml);
+    }
+
+    .footer__bg {
+        color: $color-default;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-med;
+        margin-bottom: calc($margin-y-sml * 0.5);
+        @include breakpoint-med {
+            text-align: left;
+            margin-bottom: $margin-y-sml;
+        }
+    }
+
+    .footer__sm {
+        color: $color-default;
+        font-size: $font-size-sml; 
+        @include breakpoint-med {
+            text-align: left;
+        }
+    }
+}

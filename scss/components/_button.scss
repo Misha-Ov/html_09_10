@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.btn {
+    @include btn-scale ($padding-fixed, $font-size-med, 0.7);
+    background-color: $color-highlight;
+    color: $color-default;
+    margin: auto;
+    display: block;
+    width: fit-content;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include breakpoint-sml {
+        @include btn-scale ($padding-fixed, $font-size-primary, 0.8);
+    }
+
+    @include breakpoint-med {
+        @include btn-scale ($padding-fixed, $font-size-primary, 0.9);
+        margin-left: 0;
+    }
+
+    @include breakpoint-xl {
+        @include btn-scale ($padding-fixed, $font-size-primary);
+    }
+}

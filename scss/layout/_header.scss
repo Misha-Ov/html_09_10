@@ -1,0 +1,132 @@
+@use '../abstracts' as *;
+@use '../components' as *;
+
+.header {
+    @include pdng-y-scale ($padding-y-med, $padding-y-xl, 0.25);
+
+    @include breakpoint-xs {
+        @include pdng-y-scale ($padding-y-med, $padding-y-xl, 0.4);
+    }
+
+    @include breakpoint-sml {
+        @include pdng-y-scale ($padding-y-med, $padding-y-xl, 0.6);
+    }
+
+    @include breakpoint-med {
+        @include pdng-y-scale ($padding-y-med, $padding-y-xl, 0.8);
+    }
+
+    @include breakpoint-lrg {
+        @include pdng-y-scale ($padding-y-med, $padding-y-xl);
+    }
+
+    .navbar {
+        @include dropdown;
+        margin-bottom: calc($margin-y-xl * 0.25) auto;
+
+        @include breakpoint-xs {
+            margin-bottom: calc($margin-y-xl * 0.3);
+        }
+
+        @include breakpoint-sml {
+            margin-bottom: calc($margin-y-xl * 0.4);
+        }
+
+        @include breakpoint-med {
+            margin-bottom: calc($margin-y-xl * 0.6);
+        }
+
+        @include breakpoint-lrg {
+            margin-bottom: calc($margin-y-xl * 0.8);
+        }
+
+        @include breakpoint-xl {
+            margin-bottom: $margin-y-xl;
+        }
+
+        .menu__btn,
+        #menu__toggle {
+            @include breakpoint-sml {
+                display: none;
+            }
+        }
+        .menu__box {
+            @include breakpoint-sml {
+                display: flex;
+                position: relative;
+                visibility: visible;
+                left: 0;
+                width: 100%;
+                height: fit-content;
+                padding: 0;
+                background-color: $color-primary;
+                box-shadow: none;
+                justify-content: space-around;
+                .menu__item {
+                    margin-right: $margin-x-med;
+                }
+                .menu__link {
+                    white-space: nowrap;
+                    padding: 0;
+                }
+            }
+            
+            @include breakpoint-med {
+                justify-content: left;
+            }
+            
+        }
+    }
+    
+    .hero__title {
+        margin-bottom: calc($margin-y-med * 0.5);
+        @include text-scale ($font-size-xl, 0.6);
+    
+        @include breakpoint-xs {
+            @include text-scale ($font-size-xl, 0.7);
+            margin-bottom: calc($margin-y-med * 0.7);
+        }
+
+        @include breakpoint-sml {
+            @include text-scale ($font-size-xl, 0.8);
+            margin-bottom: calc($margin-y-med * 0.8);
+        }
+
+        @include breakpoint-med {
+            @include text-scale ($font-size-xl, 0.9);
+            margin-bottom: calc($margin-y-med * 0.9);
+            text-align: left;
+        }
+
+        @include breakpoint-lrg {
+            @include text-scale ($font-size-xl);
+            margin-bottom: $margin-y-med;
+        }
+    }
+
+    .hero__text {
+        @include breakpoint-xs {
+            margin-bottom: calc($margin-y-lrg * 0.7);
+        }
+
+        @include breakpoint-sml {
+            margin-bottom: calc($margin-y-lrg * 0.8);
+        }
+
+        @include breakpoint-med {
+            margin-bottom: calc($margin-y-lrg * 0.9);
+            text-align: left;
+        }
+
+        @include breakpoint-lrg {
+            margin-bottom: $margin-y-lrg;
+        }
+    }
+
+    .text-container {
+        margin-bottom: calc($margin-y-lrg * 0.5);
+        @include breakpoint-med {
+            margin-left: 0;
+        }
+    }
+}
