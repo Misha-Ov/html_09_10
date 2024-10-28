@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../assets/background.png);
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+}
+
+.mario,
+.luigi {
+  position: absolute;
+  animation-name: drive;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.mario {
+  bottom: 100px;
+  left: 0px;
+  animation-duration: 6s;
+}
+
+.luigi {
+  bottom: 20px;
+  left: 0px;
+  animation-duration: 6.3s;
+}
+
+.sun {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: float 10s infinite;
+  animation-timing-function: linear;
+}
+.sun:hover > .layer-sunbeam {
+  animation: rotate 3s infinite;
+  animation-timing-function: linear;
+}
+.sun .sunbeam,
+.sun .circle {
+  position: absolute;
+  fill: #faf400;
+  stroke: #e2ce00;
+  stroke-width: 3;
+  fill-rule: evenodd;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.sun .layer-face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.sun .layer-face .eye {
+  fill: white;
+}
+.sun .layer-face .pupil {
+  fill: black;
+}
+.sun .layer-sunbeam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.sun .layer-sunbeam .sunbeam-1 {
+  transform: translateX(-50%) translateY(-210%);
+}
+.sun .layer-sunbeam .sunbeam-2 {
+  transform: translateX(140%) translateY(-165%) rotate(45deg);
+}
+.sun .layer-sunbeam .sunbeam-3 {
+  transform: translateX(220%) translateY(-50%) rotate(90deg);
+}
+.sun .layer-sunbeam .sunbeam-4 {
+  transform: translateX(-50%) translateY(110%) rotate(180deg);
+}
+.sun .layer-sunbeam .sunbeam-5 {
+  transform: translateX(135%) translateY(65%) rotate(135deg);
+}
+.sun .layer-sunbeam .sunbeam-6 {
+  transform: translateX(-240%) translateY(65%) rotate(225deg);
+}
+.sun .layer-sunbeam .sunbeam-7 {
+  transform: translateX(-320%) translateY(-50%) rotate(270deg);
+}
+.sun .layer-sunbeam .sunbeam-8 {
+  transform: translateX(-240%) translateY(-165%) rotate(-45deg);
+}
+
+@keyframes drive {
+  0% {
+    transform: translateX(-200px);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(2100px);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateX(-200px) translateY(250px);
+  }
+  50% {
+    transform: translateX(760px) translateY(20px);
+  }
+  100% {
+    transform: translateX(2100px) translateY(250px);
+  }
+}/*# sourceMappingURL=style.css.map */

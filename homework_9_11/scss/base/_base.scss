@@ -7,9 +7,10 @@ body {
 }
 
 h1, h2, h3, h4 {
+    text-align: center;
     margin-bottom: calc($margin-y-base * 0.5);
     font-weight: $font-weight-bold;
-    text-align: center;
+    line-height: $line-height-lrg;
     @include text-scale ($font-size-lrg, 0.6);
     
     @include breakpoint-xs {
@@ -33,10 +34,15 @@ h1, h2, h3, h4 {
     }
 }
 
+h1 {
+    line-height: $line-height-xl;
+}
+
 p, span, a {
     @include text-scale ($font-size-primary, 0.7);
-    font-weight: $font-weight-base;
     text-align: center;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
     color: black;
 
     @include breakpoint-xs {

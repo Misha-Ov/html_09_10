@@ -50,6 +50,11 @@
                 display: none;
             }
         }
+
+        .menu__link:hover {
+            color: lighten($color-highlight, 20%);
+        }
+
         .menu__box {
             @include breakpoint-sml {
                 display: flex;
